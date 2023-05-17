@@ -73,7 +73,26 @@ $(document).ready(function(){
 });
 
 
-function redirectToPage() {
-    // Replace "https://www.example.com" with the URL you want to redirect to
-    window.location.href = "https://www.example.com";
+function redirectToPage11() {
+    window.location.href = "https://github.com/Vishalrathod8788";
+}
+
+function redirectToPage12() {
+    window.location.href = "https://github.com/Vishalrathod8788";
+}
+
+function redirectToPage21() {
+    window.location.href = "https://github.com/Vishalrathod8788";
+}
+
+function redirectToPage22() {
+    window.location.href = "https://github.com/Vishalrathod8788";
+}
+
+function redirectToPage31() {
+    window.location.href = "https://github.com/Vishalrathod8788";
+}
+
+function redirectToPage32() {
+    window.location.href = "https://github.com/Vishalrathod8788";
 }
