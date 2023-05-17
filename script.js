@@ -74,11 +74,11 @@ $(document).ready(function(){
 
 
 function redirectToPage11() {
-    window.location.href = "https://github.com/Vishalrathod8788";
+    window.location.href = "https://github.com/Vishalrathod8788/Chating_Application";
 }
 
 function redirectToPage12() {
-    window.location.href = "https://github.com/Vishalrathod8788";
+    window.location.href = "";
 }
 
 function redirectToPage21() {
