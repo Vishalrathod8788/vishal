@@ -82,11 +82,11 @@ function redirectToPage12() {
 }
 
 function redirectToPage21() {
-    window.location.href = "https://github.com/Vishalrathod8788";
+    window.location.href = "https://github.com/Vishalrathod8788/Pet_House";
 }
 
 function redirectToPage22() {
-    window.location.href = "https://github.com/Vishalrathod8788";
+    window.location.href = "https://github.com/Vishalrathod8788/Pet_House";
 }
 
 function redirectToPage31() {
