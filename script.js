@@ -90,9 +90,9 @@ function redirectToPage22() {
 }
 
 function redirectToPage31() {
-    window.location.href = "https://github.com/Vishalrathod8788";
+    window.location.href = "https://github.com/Vishalrathod8788/ATM";
 }
 
 function redirectToPage32() {
-    window.location.href = "https://github.com/Vishalrathod8788";
+    window.location.href = "https://github.com/Vishalrathod8788/ATM";
 }
