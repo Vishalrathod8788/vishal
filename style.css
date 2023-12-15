@@ -59,6 +59,7 @@ section .title{
     margin-bottom: 60px;
     padding-bottom: 20px;
     font-family: 'Ubuntu', sans-serif;
+    color: #8336c7;
 }
 section .title1{
     position: relative;
@@ -309,6 +310,7 @@ section .title::after{
 .services, .Project{
     color:#fff;
     background: #111;
+    font-family: 'Poppins', sans-serif;
 }
 .services .title::before,
 .Project .title::before{
