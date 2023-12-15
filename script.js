@@ -78,7 +78,7 @@ function redirectToPage11() {
 }
 
 function redirectToPage12() {
-    window.location.href = "";
+    window.location.href = "https://github.com/Vishalrathod8788/Chating_Application";
 }
 
 function redirectToPage21() {
