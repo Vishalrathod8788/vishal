@@ -97,6 +97,10 @@ function redirectToPage32() {
     window.location.href = "https://github.com/Vishalrathod8788/ATM";
 }
 
+function redirectToPage41() {
+    window.location.href = "https://github.com/Vishalrathod8788/ATM";
+}
+
 function redirectToPage42() {
     window.location.href = "https://github.com/Vishalrathod8788/ATM";
 }
