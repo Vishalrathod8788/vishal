@@ -1,10 +1,10 @@
-import { Navigation } from "@/components/navigation";
+import Navigation from "@/components/navigation";
 
 function HomeLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>Next.js</title>
+        <title>Vishal Rathod</title>
       </head>
       <body>
         <Navigation />

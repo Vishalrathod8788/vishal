@@ -1,31 +1,44 @@
+"use client";
 import Link from "next/link";
-import style from "./Navigation.module.css";
+import { useState } from "react";
+import styles from "./Navigation.module.css";
 
-export const Navigation = () => {
+export default function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/projects", label: "Projects" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
-    <header className={style.header}>
-      <div className={style.logo}>
-        <h1>Vishal Rathod</h1>
+    <nav className={styles.nav}>
+      <div className={styles.container}>
+        <Link href="/" className={styles.logo}>
+          Vishal Rathod
+        </Link>
+
+        <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ""}`}>
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className={styles.navLink}>
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* <button
+          className={styles.menuToggle}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button> */}
       </div>
-      <nav className={style.nav}>
-        <ul>
-          <li className={style.navbarLink}>
-            <Link href="/">Home</Link>
-          </li>
-          <li className={style.navbarLink}>
-            <Link href="/about">About</Link>
-          </li>
-          <li className={style.navbarLink}>
-            <Link href="/project">Projects</Link>
-          </li>
-          <li className={style.navbarLink}>
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li className={style.navbarLink}>
-            <Link href="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    </nav>
   );
-};
+}
