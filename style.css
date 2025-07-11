@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --bg-primary: #6a11cb;
+  --bg-secondary: #2575fc;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  background-color: #f0f0f0;
+}
+
+/* navbar */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav {
+  max-width: 1200px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  font-size: 1.3rem;
+  color: #333;
+}
+.nav-links a {
+  text-decoration: none;
+}
+
+.nav-links a:link {
+  color: black;
+}
+
+.nav-links a:visited {
+  color: black;
+}
+.nav-links a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.logo {
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* hero section */
+
+.hero {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 240px;
+  padding-bottom: 100px;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 48px;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: #333;
+}
+
+.hero-action {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
+
+.btn-contact,
+.btn-project {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  background-color: #007bff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-contact:hover,
+.btn-project:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.btn-contact:focus,
+.btn-project:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* --- */
+.recent-work {
+  background-color: #f0f0f0;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.work-header {
+  margin-bottom: 40px;
+}
+
+.work-header h2 {
+  margin: 20px auto;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.work-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.work-container {
+  display: flex; /* Flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center items */
+  gap: 20px; /* Space between cards */
+}
+
+.work-card {
+  background-color: #fff; /* White background for cards */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Hide overflow */
+  width: 400px; /* Fixed width for cards */
+  transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.work-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.work-image img {
+  width: 100%; /* Full width for images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.work-details {
+  padding: 20px; /* Padding for content */
+}
+
+.work-details h3 {
+  font-size: 1.5rem; /* Title size */
+  color: #333; /* Dark color for title */
+  margin-bottom: 10px; /* Space below title */
+}
+
+.work-details p {
+  font-size: 1rem; /* Description size */
+  color: #666; /* Color for description */
+  margin-bottom: 15px; /* Space below description */
+}
+
+.work-links {
+  display: flex; /* Flexbox for links */
+  gap: 10px; /* Space between buttons */
+  justify-content: center; /* Center buttons */
+}
+
+.btn {
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 10px 15px; /* Padding for buttons */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.view-all {
+  margin-top: 40px; /* Space above the "View All Projects" button */
+}
+
+.view-all .btn {
+  font-size: 1.2rem; /* Font size for the "View All Projects" button */
+  padding: 12px 20px; /* Padding for the button */
+}

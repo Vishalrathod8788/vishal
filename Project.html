@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-Vishal</title>
+    <meta
+      name="description"
+      content="Explore the portfolio of John Doe featuring web applications built with React, Node.js, and modern technologies."
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+      /* Base styles */
+      :root {
+        --text-primary: #333;
+        --text-secondary: #666;
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --bg-tertiary: #e9ecef;
+        --border-color: #dee2e6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Jost", sans-serif;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background-color: var(--bg-primary);
+      }
+
+      /* navbar */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #f0f0f0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .nav {
+        max-width: 1200px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        margin: 0 auto;
+      }
+
+      .nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .nav-links {
+        list-style: none;
+        font-size: 1.3rem;
+        color: #333;
+      }
+      .nav-links a {
+        text-decoration: none;
+      }
+
+      .nav-links a:link {
+        color: black;
+      }
+
+      .nav-links a:visited {
+        color: black;
+      }
+      .nav-links a:hover {
+        color: #007bff;
+        text-decoration: underline;
+      }
+
+      .logo {
+        display: flex;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      /* Project Section */
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .container-narrow {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        margin-top: 60px;
+        padding-top: 140px;
+        padding-bottom: 50px;
+      }
+
+      .hero-title {
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 48px;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        text-decoration: underline;
+      }
+
+      .container-narrow .subtitle {
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        color: #333;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .section-large {
+        padding: 6rem 0;
+      }
+
+      .grid {
+        display: grid;
+        gap: 2rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .card {
+        background: var(--bg-primary);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background-color: white;
+        color: #333;
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Projects specific styles */
+      .projects {
+        min-height: 100vh;
+      }
+
+      .projects-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .projects-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .subtitle {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        margin-top: 1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .featured-section {
+        margin-bottom: 4rem;
+      }
+
+      .featured-section h2 {
+        text-decoration: underline;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 2rem;
+      }
+
+      .featured-grid {
+        gap: 3rem;
+      }
+
+      .other-projects {
+        background-color: var(--bg-secondary);
+      }
+
+      .other-section h2 {
+        text-decoration: underline;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 2rem;
+      }
+
+      .projects-grid {
+        gap: 2rem;
+      }
+
+      .project-card {
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .project-card.featured {
+        padding: 0;
+      }
+
+      .project-image {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+      }
+
+      .featured .project-image {
+        margin-bottom: 0;
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .featured .project-image img {
+        height: 300px;
+      }
+
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+
+      .project-card:hover .project-image img {
+        transform: scale(1.05);
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .project-content {
+        padding: 1.5rem;
+      }
+
+      .featured .project-content {
+        padding: 2rem;
+      }
+
+      .project-content h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .project-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .technologies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tech-tag {
+        background-color: var(--bg-tertiary);
+        color: var(--text-primary);
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        border: 1px solid var(--border-color);
+      }
+
+      @media (max-width: 768px) {
+        .featured-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .project-links {
+          flex-direction: column;
+          width: 200px;
+        }
+
+        .project-links .btn {
+          text-align: center;
+        }
+
+        .grid-2,
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">Vishal Rathod</div>
+        <ul class="nav-link">
+          <li class="nav-links"><a href="/index.html">Home </a></li>
+          <li class="nav-links"><a href="/About.html">About</a></li>
+          <li class="nav-links"><a href="/Project.html">Project</a></li>
+          <li class="nav-links"><a href="/Blog.html">Blog</a></li>
+          <li class="nav-links"><a href="/Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="projects">
+      <section class="section-large">
+        <div class="container-narrow">
+          <div class="projects-header">
+            <h1 class="hero-title">My Projects</h1>
+            <p class="subtitle">
+              A collection of projects that showcase my skills in full-stack
+              development, from concept to deployment.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="featured-section fade-in-up">
+            <h2>Featured Projects</h2>
+            <div class="featured-grid grid grid-2">
+              <div class="project-card featured card fade-in-up">
+                <div class="project-image">
+                  <img src="Image/newURL.png" alt="URL Shortener" />
+                  <div class="project-overlay">
+                    <div class="project-links">
+                      <a
+                        href="#"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                      <a
+                        href="#"
+                        class="btn btn-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>Full-Stack URL Shortener</h3>
+                  <p>
+                    The Full-Stack URL Shortener is a powerful web application
+                    that converts long URLs into short, manageable links and
+                    offers insightful analytics. This project showcases my
+                    ability to develop comprehensive applications using modern
+                    web technologies.
+                  </p>
+                  <div class="technologies">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card featured card fade-in-up">
+                <div class="project-image">
+                  <img src="./Image/ifsc.png" alt="IFSC Code Checker" />
+                  <div class="project-overlay">
+                    <div class="project-links">
+                      <a
+                        href="#"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                      <a
+                        href="#"
+                        class="btn btn-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>IFSC Code Checker</h3>
+                  <p>
+                    The IFSC Code Checker is a user-friendly web application
+                    designed to validate and look up Indian Financial System
+                    Codes (IFSC) in real-time. This tool leverages the Razorpay
+                    API to provide accurate bank details associated with the
+                    entered IFSC code, ensuring users have quick access to
+                    essential banking information.
+                  </p>
+                  <div class="technologies">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Socket.io</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Redux</span>
+                    <span class="tech-tag">Material-UI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="other-projects section">
+        <div class="container">
+          <div class="other-section fade-in-up">
+            <h2>Other Projects</h2>
+            <div class="projects-grid grid grid-3">
+              <div class="project-card card fade-in-up">
+                <div class="project-image">
+                  <img src="./Image/admin.png" alt="Weather Dashboard" />
+                  <div class="project-overlay">
+                    <div class="project-links">
+                      <a
+                        href="#"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                      <a
+                        href="#"
+                        class="btn btn-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>Weather Dashboard</h3>
+                  <p>
+                    A responsive weather application that provides current
+                    weather conditions, 7-day forecasts, and weather maps.
+                    Features location-based weather and favorite cities
+                    management.
+                  </p>
+                  <div class="technologies">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">OpenWeather API</span>
+                    <span class="tech-tag">Chart.js</span>
+                    <span class="tech-tag">Geolocation</span>
+                    <span class="tech-tag">CSS3</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card card fade-in-up">
+                <div class="project-image">
+                  <img src="./Image/pokemon.png" alt="Blog Platform" />
+                  <div class="project-overlay">
+                    <div class="project-links">
+                      <a
+                        href="#"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                      <a
+                        href="#"
+                        class="btn btn-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>Blog Platform</h3>
+                  <p>
+                    A modern blogging platform with markdown support, syntax
+                    highlighting, comment system, and SEO optimization. Features
+                    include author profiles and content management.
+                  </p>
+                  <div class="technologies">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">MDX</span>
+                    <span class="tech-tag">Prisma</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">NextAuth</span>
+                    <span class="tech-tag">Tailwind</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card card fade-in-up">
+                <div class="project-image">
+                  <img src="./Image/map.png" alt="Recipe Finder" />
+                  <div class="project-overlay">
+                    <div class="project-links">
+                      <a
+                        href="#"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                      <a
+                        href="#"
+                        class="btn btn-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>Recipe Finder</h3>
+                  <p>
+                    A recipe discovery app that helps users find recipes based
+                    on available ingredients. Features include meal planning,
+                    shopping lists, and nutritional information.
+                  </p>
+                  <div class="technologies">
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">Spoonacular API</span>
+                    <span class="tech-tag">Redux</span>
+                    <span class="tech-tag">Expo</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card card fade-in-up">
+                <div class="project-image">
+                  <img src="./Image/portfolio.png" alt="Portfolio Website" />
+                  <div class="project-overlay">
+                    <div class="project-links">
+                      <a
+                        href="#"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                      <a
+                        href="#"
+                        class="btn btn-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>Portfolio Website</h3>
+                  <p>
+                    A responsive portfolio website showcasing projects and
+                    skills. Built with modern web technologies and optimized for
+                    performance and SEO.
+                  </p>
+                  <div class="technologies">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">CSS Modules</span>
+                    <span class="tech-tag">Vercel</span>
+                    <span class="tech-tag">SEO</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
