@@ -42,11 +42,7 @@ export const About = () => {
                         </p>
 
                         <p>
-                            I've built several real-world projects that I'm proud of, including a <strong>URL Shortener</strong> that transforms long URLs into shareable links, a <strong>Wallpaper Gallery</strong> with a smooth browsing experience, and a <strong>Location Bookmark</strong> app to save and organize favorite places. Each project has taught me valuable lessons about state management, API optimization, responsive design, and user experience.
-                        </p>
-
-                        <p>
-                            My approach to technology is simple: understand the fundamentals deeply, then build relentlessly. I'm a strong believer in learning by doing, which is why I constantly work on projects that challenge me and push me out of my comfort zone. My tech stack includes JavaScript, React.js, Next.js, Tailwind CSS, Node.js, Express.js, MongoDB, and MySQL.
+                            I've built several real-world projects that I'm proud of, including a <strong>URL Shortener</strong> that transforms long URLs into shareable links, a <strong>Wallpaper Gallery</strong> with a smooth browsing experience, and a <strong>Location Bookmark</strong> app to save and organize favorite places. Each project has taught me valuable lessons about state management, API optimization, responsive design, and user experience. My approach to technology is simple: understand the fundamentals deeply, then build relentlessly. I'm a strong believer in learning by doing, which is why I constantly work on projects that challenge me and push me out of my comfort zone. My tech stack includes JavaScript, React.js, Next.js, Tailwind CSS, Node.js, Express.js, MongoDB, and MySQL.
                         </p>
 
                         <p>

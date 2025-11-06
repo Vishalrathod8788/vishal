@@ -17,7 +17,7 @@ export const Footer = () => {
 
                     {/* Center - Name */}
                     <div className="text-sm text-gray-700 dark:text-gray-300 font-medium">
-                        Vishal Rathod
+                        <span className="hidden sm:inline">Vishal Rathod</span>
                     </div>
 
                     {/* Right side - Go to top button */}
